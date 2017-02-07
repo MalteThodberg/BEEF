@@ -5,3 +5,11 @@
 #' @format List of model components required by caret.
 #'
 "caretSNC"
+
+#' example data
+#'
+#' will be changed
+#'
+#' @format List with XY
+#'
+"batch4class2"
