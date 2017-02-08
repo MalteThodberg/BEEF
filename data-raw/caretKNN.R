@@ -7,7 +7,8 @@ caretKNN$parameters <- data.frame(parameter = c("n.sv", "k"),
 																	label = c("Surrogate variables", "Neighbors"))
 
 caretKNN$grid <- function(x, y, len = NULL, search = "grid"){
-	data.frame(expand.grid(n.sv=c(0, seq_len(len)), k=seq_len(len)))
+	data.frame(expand.grid(n.sv=c(0, seq_len(len)),
+												 k=c(1,3,5,7,9,11)))
 }
 
 caretKNN$loop <- function(grid){
