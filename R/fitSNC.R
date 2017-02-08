@@ -17,7 +17,9 @@ beefedUpSNC <- function(x, y, n.sv, threshold, ...){
 	svaObj <- fitSVA(x=x, y=y, n.sv=n.sv, ...)
 
 	# Train KNN
-	invisible(utils::capture.output(sncObj <- pamr::pamr.train(data=list(x=t(x), y=y), threshold=threshold)))
+	invisible(utils::capture.output(sncObj <- pamr::pamr.train(data=list(x=t(svaObj$corrected),
+																																			 y=y),
+																														 threshold=threshold)))
 
 	# Return
 	o <- list(sva=svaObj, snc=sncObj)
